@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { IconButton } from "./IconButton";
+import { useState } from 'react';
+import { IconButton } from './IconButton';
 import './style.css';
 
 /*
@@ -11,18 +11,18 @@ Krok 2: Do prop `onSelectName` předejte funkci, která nastaví jméno do stavu
 */
 
 export const Ukol2 = () => {
-  const [jmeno, setJmeno] = useState('Jirka');
-  
+  const [jmeno, onSelectName] = useState('Jirka');
+
   return (
     <>
       <p>
         <strong>{jmeno}</strong>
       </p>
       <div className="button-group">
-        <IconButton label="Jirka" />
-        <IconButton label="Honza" />
-        <IconButton label="Tomáš" />
-        <IconButton label="Šimon" />
+        <IconButton label="Jirka" onSelectName={onSelectName} />
+        <IconButton label="Honza" onSelectName={onSelectName} />
+        <IconButton label="Tomáš" onSelectName={onSelectName} />
+        <IconButton label="Šimon" onSelectName={onSelectName} />
       </div>
     </>
   );
